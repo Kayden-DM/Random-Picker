@@ -1,4 +1,4 @@
-This README is made with AI
+This README is made with AI 
 
 🎲 Python Random Picker
 A simple desktop Random Picker application built with Python and CustomTkinter. Users add any number of items to a list, then click a button to have one chosen at random. It's a great beginner project for learning about modern GUI programming, lists, dynamic widget updates, and random selection in Python.
