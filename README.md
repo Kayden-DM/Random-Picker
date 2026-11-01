@@ -1,23 +1,48 @@
-Random Picker
-A GUI Python app built with CustomTkinter that lets you build a list of items and pick one at random.
+## Random Picker
+A desktop random picker built with CustomTkinter. It lets the user build a list of entries and pick one at random, with buttons to add, remove, and clear items.
 
-Concepts Used
-CustomTkinter Widgets — uses CTkScrollableFrame, CTkEntry, and CTkButton with a dark theme.
+## Features
+Add Entries — Type into the entry field and click Add to append it to the list.
 
-Lambda Closures — lambda i=item: remove_input(i) binds each row's remove button to its specific item.
+Scrollable List — Displays all entries in a CTkScrollableFrame, with each item on its own row.
 
-Widget Rebuilding — refresh_list() destroys and recreates all rows to reflect the current list.
+Remove Items — Each row has a ✕ button to delete that entry.
 
-Features
-Dynamic List — add items via the entry field and remove any individual item with its ✕ button.
+Clear All — Removes every entry and clears the result label.
 
-Scrollable Display — the input list lives in a scrollable frame so long lists stay usable.
+Random Pick — Uses random.choice() to select a winner and displays it with a 🎉 highlight.
 
-Random Selection — "Pick Random" highlights a winner with emojis, with a "Clear All" reset option.
+Empty List Handling — Shows "Add some inputs first!" if Pick is pressed with no entries.
 
-Improvements
-Enter Key Support — bind <Return> on the entry so users can add items without clicking; the mouse-only flow feels clunky.
+Dark Mode UI — CustomTkinter dark appearance with a blue accent theme.
 
-Duplicate & Feedback Handling — adding the same item twice is silently allowed, and empty input just returns with no message; show brief feedback.
+## Technologies Used
+text
+| Technology | Purpose |
+|---|---|
+| Python | Application logic |
+| `customtkinter` | Desktop GUI |
+| `CTkScrollableFrame` | Holds the scrollable list of entries |
+| `random.choice()` | Picks a random winner |
+| `lambda` | Binds the correct item to each ✕ button |
+| `winfo_children()` | Clears the list widgets on refresh |
+| `list` (`inputs`) | Stores all current entries |
+<!-- -->
+## How to Use It
+Install Python 3.6 or newer from python.org and make sure it's added to your PATH.
 
-Remove-by-Identity — inputs.remove(item) removes the first matching value, so duplicates remove the wrong row; store items with unique IDs or index-based removal.
+Install CustomTkinter by running pip install customtkinter.
+
+Save the code as random_picker.py.
+
+Open a terminal in the folder containing the file.
+
+Run python random_picker.py.
+
+Type entries and click Add, press Pick Random to choose one, and use ✕ or Clear All to manage the list.
+
+## Improvements
+Prevent duplicate entries — adding the same item twice puts two identical rows in the list, and inputs.remove(item) then only removes the first match; checking for duplicates on add would keep the list clean.
+
+Highlight the chosen item — the winner is only shown in the result label; scrolling the list to the winner and highlighting its row would make the pick clearer when there are many entries.
+
