@@ -17,7 +17,6 @@ Empty List Handling — Shows "Add some inputs first!" if Pick is pressed with n
 Dark Mode UI — CustomTkinter dark appearance with a blue accent theme.
 
 ## Technologies Used
-text
 | Technology | Purpose |
 |---|---|
 | Python | Application logic |
